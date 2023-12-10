@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IniciarSesion">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#15232e"
+        android:clipToPadding="true"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:clipToPadding="true"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/NubeIniciarSesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:cropToPadding="false"
+                    app:srcCompat="@drawable/nube1" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="2"
+            android:clipToPadding="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/H1IniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:fontFamily="@font/space_mono"
+                android:text="Iniciar Sesión"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#b9cad7"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/H2IniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:fontFamily="@font/space_mono"
+                android:text="Inicia sesión para empezar!"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#b9cad7"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="6"
+            android:clipToPadding="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/EmailIniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:fontFamily="@font/space_mono"
+                android:paddingLeft="5dp"
+                android:text="Email*"
+                android:textColor="#b9cad7" />
+
+            <EditText
+                android:id="@+id/CampoEmailIniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text"
+                android:ems="10"
+                android:fontFamily="@font/space_mono"
+                android:hint="Introduce tu email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp"
+                android:textColor="#4A5D6C"
+                android:textColorHint="#34424d"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/ContraseñaIniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:fontFamily="@font/space_mono"
+                android:paddingLeft="5dp"
+                android:text="Contraseña*"
+                android:textColor="#b9cad7" />
+
+            <EditText
+                android:id="@+id/CampoContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text"
+                android:ems="10"
+                android:fontFamily="@font/space_mono"
+                android:gravity="center_vertical"
+                android:hint="Introduce tu contraseña"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:textColor="#4A5D6C"
+                android:textColorHint="#34424d"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/BotonIniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2c67bf"
+                android:backgroundTintMode="src_over"
+                android:fontFamily="@font/space_mono"
+                android:text="Iniciar Sesión"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="2"
+            android:clipToPadding="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/H3IniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/space_mono"
+                android:gravity="center_horizontal"
+                android:paddingTop="20dp"
+                android:text="No tienes una cuenta?"
+                android:textColor="#b9cad7"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/EnlaceRegistrarse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/space_mono"
+                android:gravity="center_horizontal"
+                android:text="Registrarse"
+                android:textColor="#2C67BE"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
