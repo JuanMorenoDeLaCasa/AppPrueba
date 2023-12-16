@@ -5,9 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appprueba.databinding.ItemItemBinding
 
-
-class ViewHItem(view: View, private val adapter: AdapterItem, private val itemList: MutableList<Item>) :
-    RecyclerView.ViewHolder(view) {
+class ViewHItem(view: View, private val adapter: AdapterItem) : RecyclerView.ViewHolder(view) {
 
     lateinit var binding: ItemItemBinding
 
@@ -21,9 +19,7 @@ class ViewHItem(view: View, private val adapter: AdapterItem, private val itemLi
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 // Remueve el item de la lista
-                itemList.removeAt(position)
-                // Notifica al adaptador sobre el cambio en los datos
-                adapter.notifyItemRemoved(position)
+                adapter.deleteItem(position)
             }
         }
     }

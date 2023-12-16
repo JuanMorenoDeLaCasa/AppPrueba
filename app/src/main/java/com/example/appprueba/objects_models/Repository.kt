@@ -15,8 +15,8 @@ object Repository {
             "Verde" , R.drawable.botella
         ),
         Item(
-                "Tienda de campaña TNF" , "749,99€", "4,45kg" ,
-        "Amarillo" , R.drawable.tienda
+            "Tienda de campaña TNF" , "749,99€", "4,45kg" ,
+            "Amarillo" , R.drawable.tienda
         ),
         Item(
             "Esterilla" , "44,99€", "540g" ,
