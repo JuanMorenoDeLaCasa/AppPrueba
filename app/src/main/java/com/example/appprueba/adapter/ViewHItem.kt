@@ -12,7 +12,12 @@ class ViewHItem(view: View, private val adapter: AdapterItem) : RecyclerView.Vie
     init {
         binding = ItemItemBinding.bind(view)
         binding.btnEdit.setOnClickListener {
-            // Implementa la lógica para editar el item si es necesario
+            // Implementa la lógica para editar el item
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                val itemToEdit = adapter.listItem[position]
+                adapter.controller.showCreateOrEditItemDialog(itemToEdit)
+            }
         }
         binding.btnDelete.setOnClickListener {
             // Obtiene la posición del item en la lista

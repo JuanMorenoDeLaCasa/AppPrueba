@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
         controller = Controller(this, binding)
         controller.setAdapter()
+
+        binding.btnAddItem.setOnClickListener {
+            controller.showCreateOrEditItemDialog()
+        }
     }
 
     private fun initRecyclerView() {
