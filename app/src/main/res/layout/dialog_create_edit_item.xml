@@ -1,0 +1,41 @@
+<!-- dialog_create_edit_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/editTextPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Precio"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextPeso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Peso" />
+
+    <EditText
+        android:id="@+id/editTextColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Color" />
+
+    <!-- Agrega más campos según sea necesario -->
+
+    <Button
+        android:id="@+id/btnChooseImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Imagen" />
+
+</LinearLayout>
