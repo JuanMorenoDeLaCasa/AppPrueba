@@ -1,9 +1,9 @@
 package com.example.appprueba
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -37,7 +37,6 @@ class Controller(val context: Context, private val binding: ActivityMainBinding)
         binding.myRecyclerView.adapter = adapterItem
     }
 
-    @SuppressLint("MissingInflatedId")
     fun showCreateOrEditItemDialog(item: Item? = null) {
         val dialog = AlertDialog.Builder(context)
         val dialogView = (context as Activity).layoutInflater.inflate(R.layout.dialog_create_edit_item, null)
@@ -78,7 +77,7 @@ class Controller(val context: Context, private val binding: ActivityMainBinding)
                     editTextPrecio.text.toString(),
                     editTextPeso.text.toString(),
                     editTextColor.text.toString(),
-                    R.drawable.default_image
+                    selectedImageUri ?: Uri.parse("android.resource://com.example.appprueba/drawable/placeholder_image")
                 )
             }
 
@@ -98,6 +97,7 @@ class Controller(val context: Context, private val binding: ActivityMainBinding)
 
         dialog.show()
     }
+
     fun showDeleteItemDialog(itemName: String) {
         AlertDialog.Builder(context)
             .setMessage("Elemento eliminado: $itemName")
@@ -107,6 +107,9 @@ class Controller(val context: Context, private val binding: ActivityMainBinding)
             .create()
             .show()
     }
+
+    private var selectedImageUri: Uri? = null
+
     private fun openGalleryForImage() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
@@ -115,11 +118,10 @@ class Controller(val context: Context, private val binding: ActivityMainBinding)
 
     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
-            val selectedImage = data.data
+            selectedImageUri = data.data
             // Aquí puedes realizar la lógica para manejar la imagen seleccionada.
             // Puedes mostrarla en una vista previa, asignarla a un campo en el diálogo, etc.
-            Toast.makeText(context, "Imagen seleccionada: $selectedImage", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Imagen seleccionada: $selectedImageUri", Toast.LENGTH_SHORT).show()
         }
     }
 }
-
