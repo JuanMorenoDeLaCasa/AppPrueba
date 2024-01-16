@@ -8,9 +8,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.appprueba.databinding.ActivityMainBinding
+import com.example.appprueba.databinding.FragmentSecondBinding
 
-class Controller(val context: Context, private val binding: ActivityMainBinding) {
+
+class Controller(val context: Context, private val binding: FragmentSecondBinding) {
     private lateinit var listItems: MutableList<Item>
     private val adapterItem: AdapterItem by lazy { AdapterItem(listItems, this) }
 

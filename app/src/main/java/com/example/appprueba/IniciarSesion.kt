@@ -13,8 +13,8 @@ class IniciarSesion : AppCompatActivity() {
 
     // Constantes de usuario y contraseña
 
-    private val MYEMAIL = "correo"
-    private val MYPASS = "1234"
+    private val MYEMAIL = ""
+    private val MYPASS = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,7 @@ class IniciarSesion : AppCompatActivity() {
 
             if (email == MYEMAIL && contraseña == MYPASS) {
                 // Si la validación es correcta, iniciar el Activity principal
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, Home::class.java)
                 startActivity(intent)
             } else {
                 // Si la validación no es correcta, mostrar un Toast informando al usuario
