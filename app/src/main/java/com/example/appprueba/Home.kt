@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.appprueba.databinding.ActivityHomeBinding
 
 class Home : AppCompatActivity() {
@@ -28,22 +30,16 @@ class Home : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navController = findNavController(R.id.nav_host_fragment_content_home)
 
-
+        // Configura el AppBarConfiguration con el ID del fragmento principal y el DrawerLayout
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.nav_home), drawerLayout
+            setOf(R.id.Home), drawerLayout
         )
 
-        // Configura el ActionBar con el NavController y el DrawerLayout
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        // Configura el ActionBar con el NavController y el AppBarConfiguration
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         // Agrega el botón de hamburguesa al ActionBar
-        val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, binding.toolbar,
-            R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -58,12 +54,9 @@ class Home : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
+        // Permitir que NavController maneje el clic en el botón de inicio o la flecha hacia atrás
+        return NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host_fragment_content_home))
+                || super.onOptionsItemSelected(item)
     }
 }
+
