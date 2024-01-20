@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#15232e"
-    tools:context=".IniciarSesion">
+    tools:context=".Activities.IniciarSesion">
 
     <LinearLayout
         android:layout_width="match_parent"

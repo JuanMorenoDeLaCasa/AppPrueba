@@ -1,4 +1,4 @@
-package com.example.appprueba
+package com.example.appprueba.Activities
 
 import android.os.Bundle
 import android.view.Menu
@@ -11,9 +11,9 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.appprueba.R
 import com.example.appprueba.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 
 class Home : AppCompatActivity() {
 
@@ -52,6 +52,11 @@ class Home : AppCompatActivity() {
                 R.id.navigation_home -> {
                     // Navegar al fragmento Home
                     navController.navigate(R.id.Home)
+                    true
+                }
+                R.id.navigation_lightbulb -> {
+                    // Navegar al fragmento Home
+                    navController.navigate(R.id.Iluminacion)
                     true
                 }
                 // Agregar otros casos para otros elementos del menú si es necesario

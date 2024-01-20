@@ -17,13 +17,13 @@
         android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
         <activity
-            android:name=".Home"
+            android:name=".Activities.Home"
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.AppPrueba" />
 
         <activity
-            android:name=".Login"
+            android:name=".Activities.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +32,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".IniciarSesion"
+            android:name=".Activities.IniciarSesion"
             android:exported="true"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

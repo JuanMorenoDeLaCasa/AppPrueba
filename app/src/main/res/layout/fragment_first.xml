@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FirstFragment">
+    tools:context=".Fragmentos.FirstFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/CVInventario"
@@ -20,7 +20,45 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033"/>
+        app:layout_constraintVertical_bias="0.033">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            app:srcCompat="@drawable/casa" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="201dp"
+            android:layout_height="71dp"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/space_mono"
+            android:text="Casa de Juan Moreno"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/boton_inventario"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#FFFFFF"
+            android:fontFamily="@font/space_mono"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:text="Mi Casa"
+            android:textColor="#11110F"
+            app:cornerRadius="8dp" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/CV2"

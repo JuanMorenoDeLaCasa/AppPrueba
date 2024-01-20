@@ -1,4 +1,4 @@
-package com.example.appprueba
+package com.example.appprueba.Activities
 
 
 import android.content.Intent
