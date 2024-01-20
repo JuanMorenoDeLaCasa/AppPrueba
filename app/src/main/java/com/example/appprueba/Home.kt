@@ -46,6 +46,20 @@ class Home : AppCompatActivity() {
         val bottomNavigationView: BottomNavigationView = binding.navViewBottom
         bottomNavigationView.setupWithNavController(navController)
 
+        // Agregar listener para manejar la selección de elementos en el BottomNavigationView
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    // Navegar al fragmento Home
+                    navController.navigate(R.id.Home)
+                    true
+                }
+                // Agregar otros casos para otros elementos del menú si es necesario
+
+                else -> false
+            }
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -64,5 +78,7 @@ class Home : AppCompatActivity() {
         return NavigationUI.onNavDestinationSelected(item, findNavController(R.id.nav_host_fragment_content_home))
                 || super.onOptionsItemSelected(item)
     }
+
+
 }
 
